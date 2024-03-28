@@ -1,0 +1,20 @@
+<unity:PrismApplication x:Class="Innova.Launcher.App"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:local="clr-namespace:Innova.Launcher"
+                        xmlns:unity="http://prismlibrary.com/">
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Innova.Launcher.UI;component/Themes/Generic.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Innova.Launcher;component/Styles/Controls.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Innova.Launcher;component/Resources/lang.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Innova.Launcher;component/Resources/lang.ru-RU.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Innova.Launcher;component/Resources/lang.en-US.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Innova.Launcher;component/Resources/lang.pt-BR.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Innova.Launcher;component/Resources/lang.es-AR.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Innova.Launcher;component/Resources/lang.pl-PL.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Application.Resources>
+</unity:PrismApplication>

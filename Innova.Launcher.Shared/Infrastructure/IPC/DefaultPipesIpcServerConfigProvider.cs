@@ -1,0 +1,29 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: Innova.Launcher.Shared.Infrastructure.IPC.DefaultPipesIpcServerConfigProvider
+// Assembly: Innova.Launcher.Shared, Version=1.0.0.279, Culture=neutral, PublicKeyToken=null
+// MVID: 20DF0516-E71E-465E-9BFF-8BD10660A67D
+// Assembly location: C:\Program Files (x86)\Innova\4game2.0\bin\Innova.Launcher.Shared.dll
+
+using Innova.Launcher.Shared.Infrastructure.IPC.Interfaces;
+
+namespace Innova.Launcher.Shared.Infrastructure.IPC
+{
+  public class DefaultPipesIpcServerConfigProvider : IPipesIpcServerConfigProvider
+  {
+    public int MaxConnectionsAmount { get; }
+
+    public string PipeName { get; }
+
+    public DefaultPipesIpcServerConfigProvider(int maxConnectionsAmount, string pipeName)
+    {
+      this.MaxConnectionsAmount = maxConnectionsAmount;
+      this.PipeName = pipeName;
+    }
+
+    public DefaultPipesIpcServerConfigProvider()
+    {
+      this.MaxConnectionsAmount = 10;
+      this.PipeName = "4game-ipc-pipe";
+    }
+  }
+}

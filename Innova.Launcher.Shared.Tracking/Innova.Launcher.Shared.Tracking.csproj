@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Program Files (x86)\Innova\4game2.0\bin\Innova.Launcher.Shared.Tracking.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FE14950D-BEB0-47B3-8CFA-913661234BB5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Innova.Launcher.Shared.Tracking</AssemblyName>
+    <ApplicationVersion>1.0.0.279</ApplicationVersion>
+    <RootNamespace>Innova.Launcher.Shared.Tracking</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections">
+      <HintPath>lib\System.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>lib\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices">
+      <HintPath>lib\System.Runtime.InteropServices.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\LauncherCPU.cs" />
+    <Compile Include="Models\LauncherHardware.cs" />
+    <Compile Include="Models\LauncherOperatingSystem.cs" />
+    <Compile Include="Models\LauncherRam.cs" />
+    <Compile Include="Models\LauncherVideoCard.cs" />
+    <Compile Include="Models\TrackingEvent.cs" />
+    <Compile Include="Models\UserEventBase.cs" />
+    <Compile Include="Models\Installation\InstallationErrorUserEvent.cs" />
+    <Compile Include="Models\Installation\InstallationFinishedUserEvent.cs" />
+    <Compile Include="Models\Installation\InstallationStartedUserEvent.cs" />
+    <Compile Include="Models\Application\InstallerClosedUserEvent.cs" />
+    <Compile Include="Models\Application\InstallerLaunchedUserEvent.cs" />
+    <Compile Include="Models\Application\LauncherClosedEvent.cs" />
+    <Compile Include="Models\Application\LauncherGameLaunchErrorEvent.cs" />
+    <Compile Include="Models\Application\LauncherHardwareEvent.cs" />
+    <Compile Include="Models\Application\LauncherLaunchedEvent.cs" />
+    <Compile Include="Models\Application\LauncherRuntimeErrorUserEvent.cs" />
+    <Compile Include="Helpers\RamTypeHelper.cs" />
+    <Compile Include="Interfaces\ITrackingConfiguration.cs" />
+    <Compile Include="Interfaces\ITrackingService.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

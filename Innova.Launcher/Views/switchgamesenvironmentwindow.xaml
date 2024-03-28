@@ -1,0 +1,45 @@
+<controls1:ModernWindow x:Class="Innova.Launcher.Views.SwitchGamesEnvironmentWindow"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                        xmlns:local="clr-namespace:Innova.Launcher.Views"
+                        xmlns:controls1="clr-namespace:Innova.Launcher.UI.Controls;assembly=Innova.Launcher.UI"
+                        xmlns:launcher="clr-namespace:Innova.Launcher"
+                        xmlns:services="clr-namespace:Innova.Launcher.Shared.Localization.Services;assembly=Innova.Launcher.Shared.Localization"
+                        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+                        ShowCloseButton="True" ShowMinButton="False" ShowMaxRestoreButton="False"
+                        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" BorderThickness="0"
+                        Style="{StaticResource ModernWindowStyle}" FontFamily="{StaticResource AppFont}" ShowTitle="True"
+                        SizeToContent="Height" Width="410" GlowBrush="Black" NonActiveGlowBrush="Black"
+                        lex:LocalizeDictionary.DesignCulture="ru" Title="{lex:Loc GamesEnvironmentSwitch.Title}">
+  <services:ResourceLocalizationProvider.DesignProvider>
+    <services:ResourceLocalizationProvider DictionaryType="{x:Type launcher:App}"/>
+  </services:ResourceLocalizationProvider.DesignProvider>
+  <FrameworkElement.Resources>
+    <ResourceDictionary Source="pack://application:,,,/Innova.Launcher.UI;component/Themes/Generic.xaml"/>
+  </FrameworkElement.Resources>
+  <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="20">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition/>
+        <ColumnDefinition Width="120"/>
+      </Grid.ColumnDefinitions>
+      <TextBlock Grid.Row="0" VerticalAlignment="Bottom" Margin="10,0,0,5" HorizontalAlignment="Left"
+                 TextWrapping="Wrap" TextTrimming="WordEllipsis" Text="{lex:Loc GamesEnvironmentSwitch.Message}"/>
+      <ComboBox x:Name="Selector" Margin="0,0,10,0" Grid.Column="1" DisplayMemberPath="DisplayName"
+                ItemsSource="{Binding GamesEnvironments}" SelectedItem="{Binding SelectedGamesEnvironment}"/>
+    </Grid>
+    <UniformGrid Grid.Row="2" Columns="2" Margin="0 20 0 0">
+      <Button IsDefault="True" HorizontalAlignment="Stretch" Style="{StaticResource AccentInnovaButtonStyle}"
+              Content="{lex:Loc Dialog.Ok}" Command="{Binding SwitchCommand}"/>
+      <Button IsCancel="True" HorizontalAlignment="Stretch" Style="{StaticResource InnovaButtonStyle}"
+              Margin="20 0 0 0" Content="{lex:Loc Dialog.Cancel}"/>
+    </UniformGrid>
+  </Grid>
+</controls1:ModernWindow>

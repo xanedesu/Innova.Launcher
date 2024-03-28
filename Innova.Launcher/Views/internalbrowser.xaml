@@ -1,0 +1,59 @@
+<controls:ModernWindow x:Class="Innova.Launcher.Views.InternalBrowser"
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:dragablz="http://dragablz.net/winfx/xaml/dragablz"
+                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                       xmlns:controls="clr-namespace:Innova.Launcher.UI.Controls;assembly=Innova.Launcher.UI"
+                       xmlns:converters="clr-namespace:Innova.Launcher.Converters"
+                       xmlns:viewModels="clr-namespace:Innova.Launcher.ViewModels"
+                       xmlns:views="clr-namespace:Innova.Launcher.Views"
+                       ResizeMode="CanResize" BorderThickness="0" ShowMinButton="False" ShowCloseButton="False"
+                       ShowMaxRestoreButton="False" Background="{DynamicResource BackgroundBrush}"
+                       FontFamily="{StaticResource AppFont}" ShowTitle="False" GlowBrush="Black" NonActiveGlowBrush="Gray"
+                       Style="{StaticResource ModernWindowStyle}" Width="1260" Height="700" MinWidth="840" MinHeight="450"
+                       Title="{Binding ElementName=BrowserTabControl, Path=SelectedItem.Title, FallbackValue=Browser}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Innova.Launcher.UI;component/Themes/Generic.xaml"/>
+        <ResourceDictionary>
+          <converters:TabsHostToTabWidthConverter x:Key="TabsHostToTabWidthConverter"/>
+        </ResourceDictionary>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <dragablz:TabablzControl SizeChanged="BrowserTabControl_SizeChanged" x:Name="BrowserTabControl"
+                             ItemContainerStyle="{StaticResource InnovaDragableTabItemStyle}" BorderThickness="0"
+                             HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ShowDefaultCloseButton="True"
+                             ShowDefaultAddButton="False" Background="{DynamicResource BackgroundBrush}"
+                             ItemsSource="{Binding Tabs}" SelectedItem="{Binding Selected}"
+                             ClosingItemCallback="{Binding CloseCallback}">
+      <dragablz:TabablzControl.HeaderItemTemplate>
+        <DataTemplate DataType="{x:Type viewModels:BrowserTabViewModel}">
+          <views:BrowserTabHeader MaxWidth="159">
+            <FrameworkElement.Width>
+              <MultiBinding Converter="{StaticResource TabsHostToTabWidthConverter}">
+                <Binding RelativeSource="{RelativeSource AncestorType={x:Type dragablz:TabablzControl}, Mode=FindAncestor}"/>
+                <Binding Path="MaxWidth" RelativeSource="{RelativeSource Mode=Self}"/>
+              </MultiBinding>
+            </FrameworkElement.Width>
+          </views:BrowserTabHeader>
+        </DataTemplate>
+      </dragablz:TabablzControl.HeaderItemTemplate>
+      <TabControl.ContentTemplate>
+        <DataTemplate DataType="{x:Type viewModels:BrowserTabViewModel}">
+          <views:BrowserTabItem/>
+        </DataTemplate>
+      </TabControl.ContentTemplate>
+      <dragablz:TabablzControl.HeaderSuffixContent>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal" Margin="20 0 0 0">
+          <Button Style="{StaticResource MinimizeWindowButtonStyle}" Command="{Binding MinimizeCommand}"/>
+          <Button Style="{StaticResource MaximizeRestoreWindowButtonStyle}" Command="{Binding MaximizeCommand}"/>
+          <Button Style="{StaticResource CloseWindowButtonStyle}" Command="{Binding CloseCommand}"/>
+        </StackPanel>
+      </dragablz:TabablzControl.HeaderSuffixContent>
+    </dragablz:TabablzControl>
+  </Grid>
+</controls:ModernWindow>

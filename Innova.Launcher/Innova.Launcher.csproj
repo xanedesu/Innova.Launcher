@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Program Files (x86)\Innova\4game2.0\bin\Innova.Launcher.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C11C0F3A-C8D7-43A3-98D2-00A02B370B23}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Innova.Launcher</AssemblyName>
+    <ApplicationVersion>1.0.0.279</ApplicationVersion>
+    <RootNamespace>Innova.Launcher</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CefSharp">
+      <HintPath>lib\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core">
+      <HintPath>lib\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.WinForms">
+      <HintPath>lib\CefSharp.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator">
+      <HintPath>lib\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Dragablz">
+      <HintPath>lib\Dragablz.dll</HintPath>
+    </Reference>
+    <Reference Include="DynamicData">
+      <HintPath>lib\DynamicData.dll</HintPath>
+    </Reference>
+    <Reference Include="Hardcodet.Wpf.TaskbarNotification">
+      <HintPath>lib\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
+    </Reference>
+    <Reference Include="Innova.Launcher.Core">
+      <HintPath>lib\Innova.Launcher.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Innova.Launcher.Shared">
+      <HintPath>lib\Innova.Launcher.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Innova.Launcher.Shared.Localization">
+      <HintPath>lib\Innova.Launcher.Shared.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Innova.Launcher.Shared.Logging">
+      <HintPath>lib\Innova.Launcher.Shared.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Innova.Launcher.Shared.Tracking">
+      <HintPath>lib\Innova.Launcher.Shared.Tracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Innova.Launcher.Tracking">
+      <HintPath>lib\Innova.Launcher.Tracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Innova.Launcher.UI">
+      <HintPath>lib\Innova.Launcher.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Innova.Launcher.Updater.Core">
+      <HintPath>lib\Innova.Launcher.Updater.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.SystemEvents">
+      <HintPath>lib\Microsoft.Win32.SystemEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Polly">
+      <HintPath>lib\Polly.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Prism">
+      <HintPath>lib\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Unity.Wpf">
+      <HintPath>lib\Prism.Unity.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Wpf">
+      <HintPath>lib\Prism.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ReactiveUI">
+      <HintPath>lib\ReactiveUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections">
+      <HintPath>lib\System.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Concurrent" />
+    <Reference Include="System.Collections.Specialized">
+      <HintPath>lib\System.Collections.Specialized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.Primitives">
+      <HintPath>lib\System.ComponentModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.TypeConverter">
+      <HintPath>lib\System.ComponentModel.TypeConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.ConfigurationManager">
+      <HintPath>lib\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Debug">
+      <HintPath>lib\System.Diagnostics.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.EventLog">
+      <HintPath>lib\System.Diagnostics.EventLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Process">
+      <HintPath>lib\System.Diagnostics.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tools">
+      <HintPath>lib\System.Diagnostics.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Primitives">
+      <HintPath>lib\System.Drawing.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem">
+      <HintPath>lib\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq">
+      <HintPath>lib\System.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Expressions">
+      <HintPath>lib\System.Linq.Expressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ObjectModel">
+      <HintPath>lib\System.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive">
+      <HintPath>lib\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.ResourceManager">
+      <HintPath>lib\System.Resources.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>lib\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions">
+      <HintPath>lib\System.Runtime.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions">
+      <HintPath>lib\System.Text.RegularExpressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading">
+      <HintPath>lib\System.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>lib\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Thread">
+      <HintPath>lib\System.Threading.Thread.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.HttpUtility">
+      <HintPath>lib\System.Web.HttpUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="Unity.Abstractions">
+      <HintPath>lib\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="WPFLocalizeExtension">
+      <HintPath>lib\WPFLocalizeExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>app.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LauncherModule.cs" />
+    <Compile Include="obj\x86\Release\netcoreapp3.1\win-x86\HitTestValues.cs" />
+    <Compile Include="obj\x86\Release\netcoreapp3.1\win-x86\WindowMessages.cs" />
+    <Compile Include="obj\x86\Release\netcoreapp3.1\win-x86\SystemCommands.cs" />
+    <Compile Include="Native.cs" />
+    <Compile Include="obj\x86\Release\netcoreapp3.1\win-x86\WindowPos.cs" />
+    <Compile Include="obj\x86\Release\netcoreapp3.1\win-x86\Points.cs" />
+    <Compile Include="obj\x86\Release\netcoreapp3.1\win-x86\WindowPosFlags.cs" />
+    <Compile Include="obj\x86\Release\netcoreapp3.1\win-x86\WindowStyle.cs" />
+    <Compile Include="obj\x86\Release\netcoreapp3.1\win-x86\NativeMessage.cs" />
+    <Compile Include="obj\x86\Release\netcoreapp3.1\win-x86\AppBarData.cs" />
+    <Compile Include="obj\x86\Release\netcoreapp3.1\win-x86\MouseHook.cs" />
+    <Compile Include="obj\x86\Release\netcoreapp3.1\win-x86\HookType.cs" />
+    <Compile Include="obj\x86\Release\netcoreapp3.1\win-x86\HookCodes.cs" />
+    <Compile Include="obj\x86\Release\netcoreapp3.1\win-x86\CBTHookCodes.cs" />
+    <Compile Include="obj\x86\Release\netcoreapp3.1\win-x86\Win32Point.cs" />
+    <Compile Include="1Native.cs" />
+    <Compile Include="2Native.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Converters\HtmlDecodeJsonConverter.cs" />
+    <Compile Include="Converters\InverseBooleanConverter.cs" />
+    <Compile Include="Converters\PriorityMultiValueConverter.cs" />
+    <Compile Include="Converters\TabsHostToTabWidthConverter.cs" />
+    <Compile Include="Controls\SystemTrayControl.xaml.cs">
+      <DependentUpon>controlssystemtraycontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\BrowserTabHeader.xaml.cs">
+      <DependentUpon>viewsbrowsertabheader.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\BrowserTabItem.xaml.cs">
+      <DependentUpon>viewsbrowsertabitem.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\DialogWindow.xaml.cs">
+      <DependentUpon>viewsdialogwindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\InternalBrowser.xaml.cs">
+      <DependentUpon>viewsinternalbrowser.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\MainShell.xaml.cs">
+      <DependentUpon>viewsmainshell.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\PushNotificationView.xaml.cs">
+      <DependentUpon>viewspushnotificationview.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\PushNotificatorWindow.xaml.cs">
+      <DependentUpon>viewspushnotificatorwindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\SwitchGamesEnvironmentWindow.xaml.cs">
+      <DependentUpon>viewsswitchgamesenvironmentwindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\Errors\NoInternetConnectionError.xaml.cs">
+      <DependentUpon>errorsnointernetconnectionerror.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\Errors\SomethingGoWrongError.xaml.cs">
+      <DependentUpon>errorssomethinggowrongerror.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Behaviors\TextBoxUpdateOnLostKeyboardFocusBehavior.cs" />
+    <Compile Include="Controls\ChromiumWebBrowserUtility.cs" />
+    <Compile Include="Controls\ClickSelectTextBox.cs" />
+    <Compile Include="Controls\ContentManager.cs" />
+    <Compile Include="Controls\InputBindinsManager.cs" />
+    <Compile Include="Controls\SqueezeTabPanel.cs" />
+    <Compile Include="ViewModels\BrowserTabViewModel.cs" />
+    <Compile Include="ViewModels\BrowserViewModel.cs" />
+    <Compile Include="ViewModels\DialogViewModel.cs" />
+    <Compile Include="ViewModels\GameTrayState.cs" />
+    <Compile Include="ViewModels\GameTrayViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\PushNotificationViewModel.cs" />
+    <Compile Include="ViewModels\PushNotificatorViewModel.cs" />
+    <Compile Include="ViewModels\SwitchEnvironmentViewModel.cs" />
+    <Compile Include="ViewModels\1SwitchEnvironmentViewModel.cs" />
+    <Compile Include="ViewModels\SystemTrayViewModel.cs" />
+    <Compile Include="Services\ApplicationUrlLoadService.cs" />
+    <Compile Include="Services\BackendApi.cs" />
+    <Compile Include="Services\IBrowserDispatcher.cs" />
+    <Compile Include="Services\BrowserDispatcher.cs" />
+    <Compile Include="Services\ChromiumOutputMessageDispatcher.cs" />
+    <Compile Include="Services\ChromiumScriptExecutor.cs" />
+    <Compile Include="Services\ICookieMigrator.cs" />
+    <Compile Include="Services\CookieMigrator.cs" />
+    <Compile Include="Services\DefaultBrowserService.cs" />
+    <Compile Include="Services\EnvironmentConfigurationProvider.cs" />
+    <Compile Include="Services\IGlobalMouseHook.cs" />
+    <Compile Include="Services\GlobalMouseHook.cs" />
+    <Compile Include="Services\IInternetConnectionStateNotifier.cs" />
+    <Compile Include="Services\InternetConnectionStateNotifier.cs" />
+    <Compile Include="Services\LauncherDeployVersionProvider.cs" />
+    <Compile Include="Services\ILauncherLocalizationUpdater.cs" />
+    <Compile Include="Services\LauncherLocalizationUpdater.cs" />
+    <Compile Include="Services\LauncherTrackingService.cs" />
+    <Compile Include="Services\LauncherUpdateService.cs" />
+    <Compile Include="Services\LauncherUpdateServiceFactory.cs" />
+    <Compile Include="Services\IMainShellFactory.cs" />
+    <Compile Include="Services\MainShellFactory.cs" />
+    <Compile Include="Services\MessageBusWrapper.cs" />
+    <Compile Include="Services\NotificationUrlService.cs" />
+    <Compile Include="Services\OutputMessageDispatcherProvider.cs" />
+    <Compile Include="Services\IPushNotificationCoordinator.cs" />
+    <Compile Include="Services\PushNotificationCoordinator.cs" />
+    <Compile Include="Services\ScriptExecutorProvider.cs" />
+    <Compile Include="Services\SwitchGamesEnvironmentService.cs" />
+    <Compile Include="Services\SystemTrayService.cs" />
+    <Compile Include="Services\TrackingConfigurationProvider.cs" />
+    <Compile Include="Services\WebBrowserUtility.cs" />
+    <Compile Include="Services\IWhiteListService.cs" />
+    <Compile Include="Services\WhiteListService.cs" />
+    <Compile Include="Services\WindowsService.cs" />
+    <Compile Include="Services\MessageHandlers\CloseExceptMainWebMessageHandler.cs" />
+    <Compile Include="Services\MessageHandlers\FocusWindowWebMessageHandler.cs" />
+    <Compile Include="Services\MessageHandlers\GetMainWindowSizeMessageHandler.cs" />
+    <Compile Include="Services\MessageHandlers\LocalStorageWebMessageHandler.cs" />
+    <Compile Include="Services\MessageHandlers\OpenWindowWebMessageHandler.cs" />
+    <Compile Include="Services\MessageHandlers\PushNotificationWebMessageHandler.cs" />
+    <Compile Include="Services\MessageHandlers\SendWindowEventWebMessageHandler.cs" />
+    <Compile Include="Services\MessageHandlers\WindowStateChangedData.cs" />
+    <Compile Include="Services\Interfaces\IApplicationUrlLoadService.cs" />
+    <Compile Include="Services\Interfaces\OpenApplicationResult.cs" />
+    <Compile Include="Services\Interfaces\IBackendApi.cs" />
+    <Compile Include="Services\Interfaces\IDefaultBrowserService.cs" />
+    <Compile Include="Services\Interfaces\IMainShellPresenter.cs" />
+    <Compile Include="Services\Interfaces\INotificationUrlService.cs" />
+    <Compile Include="Services\Interfaces\IScriptExecutorProvider.cs" />
+    <Compile Include="Services\Interfaces\ISwitchGamesEnvironmentService.cs" />
+    <Compile Include="Services\Interfaces\IWindowController.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="Models\NotificationReadLauncherMessageData.cs" />
+    <Compile Include="Models\NotificationReadLauncherMessage.cs" />
+    <Compile Include="Models\PushNotification.cs" />
+    <Compile Include="Models\PushNotificationLink.cs" />
+    <Compile Include="Models\SyncWindow.cs" />
+    <Compile Include="Models\Notifications\Notification.cs" />
+    <Compile Include="Helpers\CefSharpLocalHelper.cs" />
+    <Compile Include="Helpers\CssHelper.cs" />
+    <Compile Include="Helpers\DotnetBrowserDateTimeHelper.cs" />
+    <Compile Include="Helpers\WindowHelper.cs" />
+    <Compile Include="Handlers\ExternalBrowserLifeSpanHandler.cs" />
+    <Compile Include="Handlers\ForgameContextMenuHandler.cs" />
+    <Compile Include="Handlers\ForgameKeyboardHandler.cs" />
+    <Compile Include="Handlers\ForgameLoadHandler.cs" />
+    <Compile Include="Handlers\InternalBrowserLifeSpanHandler.cs" />
+    <Compile Include="Extensions\WebBrowserExtensions.cs" />
+    <Compile Include="Events\BrowserTabsCountChangedEvent.cs" />
+    <Compile Include="Events\BrowserTabsEmptyEvent.cs" />
+    <Compile Include="Events\NavigateMainWindowEvent.cs" />
+    <Compile Include="Events\NotificationOccuredEvent.cs" />
+    <Compile Include="Events\PushNotificationClosedEvent.cs" />
+    <Compile Include="Events\PushNotificationOccuredEvent.cs" />
+    <Compile Include="Events\PushNotificationReadEvent.cs" />
+    <Compile Include="Services\Interfaces\IScriptExecutor.cs" />
+    <Compile Include="Services\Interfaces\IScriptExecutor`1.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="4game.ico" />
+    <Resource Include="resources\gothampro-light.woff2" />
+    <Resource Include="resources\gothampromedium.ttf" />
+    <Resource Include="resources\gothampro-medium.woff2" />
+    <Resource Include="resources\gothampromedium3.ttf" />
+    <Resource Include="resources\no_internet.gif" />
+    <Resource Include="resources\resourcegothampromedium.ttf" />
+    <Resource Include="resources\something_wrong.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="environments.json" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="app.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\systemtraycontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="resources\lang.en-us.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="resources\lang.es-ar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="resources\lang.pl-pl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="resources\lang.pt-br.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="resources\lang.ru-ru.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="resources\lang.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="styles\controls.metrotabcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="styles\controls.textbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="styles\controls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\browsertabheader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\browsertabitem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\dialogwindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\errors\nointernetconnectionerror.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\errors\somethinggowrongerror.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\internalbrowser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\mainshell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\pushnotificationview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\pushnotificatorwindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\switchgamesenvironmentwindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

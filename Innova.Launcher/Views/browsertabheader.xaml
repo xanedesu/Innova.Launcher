@@ -1,0 +1,35 @@
+<UserControl x:Class="Innova.Launcher.Views.BrowserTabHeader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:Innova.Launcher.Converters"
+             xmlns:controls="clr-namespace:Innova.Launcher.UI.Controls;assembly=Innova.Launcher.UI"
+             xmlns:converters1="clr-namespace:Innova.Launcher.UI.Converters;assembly=Innova.Launcher.UI"
+             xmlns:dragablz="http://dragablz.net/winfx/xaml/dragablz">
+  <FrameworkElement.Resources>
+    <converters:PriorityMultiValueConverter x:Key="PriorityMultiValueConverter"/>
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    <converters1:CustomBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter" TrueValue="Collapsed" FalseValue="Visible"/>
+  </FrameworkElement.Resources>
+  <DockPanel Margin="16 0 0 0">
+    <Border CornerRadius="4" BorderThickness="0" ClipToBounds="True">
+      <Grid>
+        <Image DockPanel.Dock="Left" Margin="0" Width="20" Height="20" Source="{Binding FaviconUrl}"
+               Visibility="{Binding IsLoading, Converter={StaticResource InverseBooleanToVisibilityConverter}}"/>
+        <controls:Loader LoaderType="Small" DockPanel.Dock="Left" Width="20" Height="20"
+                         Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+      </Grid>
+    </Border>
+    <TextBlock Margin="5 0 0 0" BaselineOffset="0" VerticalAlignment="Center"
+               FontFamily="{StaticResource AppFont}" FontSize="13px"
+               ToolTip="{Binding Path=Text, Source={RelativeSource Self}}">
+      <TextBlock.Text>
+        <MultiBinding Converter="{StaticResource PriorityMultiValueConverter}">
+          <Binding Path="Title"/>
+          <Binding Path="Address"/>
+        </MultiBinding>
+      </TextBlock.Text>
+    </TextBlock>
+  </DockPanel>
+</UserControl>

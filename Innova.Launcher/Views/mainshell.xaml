@@ -1,0 +1,64 @@
+<controls1:ModernWindow x:Class="Innova.Launcher.Views.MainShell"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                        xmlns:shared="clr-namespace:Innova.Launcher.Shared;assembly=Innova.Launcher.Shared"
+                        xmlns:beh="clr-namespace:Innova.Launcher.UI.Behaviors;assembly=Innova.Launcher.UI"
+                        xmlns:controls1="clr-namespace:Innova.Launcher.UI.Controls;assembly=Innova.Launcher.UI"
+                        xmlns:converters1="clr-namespace:Innova.Launcher.UI.Converters;assembly=Innova.Launcher.UI"
+                        xmlns:errors="clr-namespace:Innova.Launcher.Views.Errors"
+                        xmlns:winForms="clr-namespace:CefSharp.WinForms;assembly=CefSharp.WinForms"
+                        xmlns:controls="clr-namespace:Innova.Launcher.Controls"
+                        xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+                        Style="{StaticResource ModernWindowStyle}" ResizeMode="CanResize" ShowTitle="False"
+                        BorderThickness="0" GlowBrush="Black" NonActiveGlowBrush="Gray" OverlapsTitle="True"
+                        Background="{DynamicResource BackgroundBrush}" WindowStartupLocation="CenterScreen"
+                        FontFamily="{StaticResource AppFont}" Title="{x:Static shared:LauncherConstants.MainWindowTitle}"
+                        Height="650" Width="715" MinHeight="450" MinWidth="840"
+                        SaveWindowPosition="{Binding SaveWindowPosition}"
+                        ShowTitleBar="{Binding Path=ShowWindowTitle, Converter={StaticResource BooleanToVisibilityConverter}}"
+                        ShowMinButton="{Binding Path=ShowWindowTitle, Converter={StaticResource BooleanToVisibilityConverter}}"
+                        ShowCloseButton="{Binding Path=ShowWindowTitle, Converter={StaticResource BooleanToVisibilityConverter}}"
+                        ShowMaxRestoreButton="{Binding Path=ShowWindowTitle, Converter={StaticResource BooleanToVisibilityConverter}}">
+  <Interaction.Triggers>
+    <EventTrigger EventName="StateChanged">
+      <beh:EventToCommand PassSenderAndEventArgsToCommand="True" Command="{Binding HandleWindowStateChangeCommand}"/>
+    </EventTrigger>
+  </Interaction.Triggers>
+  <FrameworkElement.Resources>
+    <converters1:CustomBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter" TrueValue="Collapsed" FalseValue="Visible"/>
+    <converters1:CustomBooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" TrueValue="Visible" FalseValue="Collapsed"/>
+  </FrameworkElement.Resources>
+  <Grid VerticalAlignment="Stretch">
+    <FrameworkElement.Style>
+      <Style TargetType="{x:Type Grid}">
+        <Style.Triggers>
+          <DataTrigger Binding="{Binding ShowWindowTitle}" Value="True">
+            <Setter Property="FrameworkElement.Margin" Value="0,30,0,0"/>
+          </DataTrigger>
+        </Style.Triggers>
+      </Style>
+    </FrameworkElement.Style>
+    <Grid Background="Transparent">
+      <FrameworkElement.Style>
+        <Style TargetType="{x:Type Grid}">
+          <Style.Triggers>
+            <DataTrigger Binding="{Binding ShowWindowTitle}" Value="True">
+              <Setter Property="FrameworkElement.Margin" Value="0,0,0,30"/>
+            </DataTrigger>
+          </Style.Triggers>
+        </Style>
+      </FrameworkElement.Style>
+      <controls1:Loader HorizontalAlignment="Center" VerticalAlignment="Center" Width="55" Height="55"/>
+      <WindowsFormsHost FrameworkElement.HorizontalAlignment="Stretch" FrameworkElement.VerticalAlignment="Stretch"
+                        UIElement.Visibility="{Binding HasProblem, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+        <winForms:ChromiumWebBrowser x:Name="Browser" AllowDrop="False" Dock="Fill"/>
+      </WindowsFormsHost>
+      <errors:NoInternetConnectionError VerticalAlignment="Center"
+                                        Visibility="{Binding InternetConnectionExists, Converter={StaticResource InverseBooleanToVisibilityConverter}}"/>
+      <errors:SomethingGoWrongError VerticalAlignment="Center"
+                                    Visibility="{Binding ShowSomethingGoWrong, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+    </Grid>
+  </Grid>
+</controls1:ModernWindow>

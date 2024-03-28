@@ -1,0 +1,16 @@
+﻿{
+  "environments": [
+    {
+      "name": "prod"
+    },
+    {
+      "name": "stable"
+    },
+    {
+      "name": "beta"
+    }
+  ],
+  "versionsFilePrefix": "versions",
+  "versionsFileExtention": ".json",
+  "versionReleaseInfoFileName": "version_info.json"
+}

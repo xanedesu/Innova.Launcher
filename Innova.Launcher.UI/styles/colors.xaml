@@ -1,0 +1,89 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+  <Color x:Key="AccentForegroundColor">#0E0400</Color>
+  <Color x:Key="AccentBackgroundColor">#F5B105</Color>
+  <Color x:Key="AccentBackgroundStep2Color">#15F5B105</Color>
+  <Color x:Key="OverlayBorderColor">#1AFFFFFF</Color>
+  <Color x:Key="OverlayColor">#1C1E30</Color>
+  <Color x:Key="NotificationBackgroundColor">#20202D</Color>
+  <Color x:Key="NotificationOuterBorderColor">#767985</Color>
+  <Color x:Key="NotificationBorderColor">#19FFFFFF</Color>
+  <Color x:Key="BackgroundColor">#141320</Color>
+  <Color x:Key="BackgroundActiveColor">#1D1D30</Color>
+  <Color x:Key="InactiveWindowCaptionColor">#12121C</Color>
+  <Color x:Key="WindowCaptionColor">#E61C1E30</Color>
+  <Color x:Key="ControlDefaultColor">#91929D</Color>
+  <Color x:Key="ControlActiveColor">#F6F7FD</Color>
+  <Color x:Key="ControlHoverColor">#D4D5DB</Color>
+  <Color x:Key="ControlDisabledColor">#4E4E5F</Color>
+  <Color x:Key="InverseTextColor">#000000</Color>
+  <Color x:Key="TextColor">#FFFFFF</Color>
+  <Color x:Key="TextActiveColor">#FFFEFC</Color>
+  <Color x:Key="TabHoverColor">#191824</Color>
+  <Color x:Key="ButtonBorderColor">#FFFFFF</Color>
+  <Color x:Key="LinkDefaultColor">#F5B105</Color>
+  <Color x:Key="ButtonHoverColor">#FAC704</Color>
+  <Color x:Key="ButtonPressedColor">#D99E0A</Color>
+  <Color x:Key="ButtonDisableColor">#8B8B8B</Color>
+  <Color x:Key="FocusColor">#E6BD1A</Color>
+  <Color x:Key="FocusBorderColor">#FEFCC9</Color>
+  <Color x:Key="ProgressBarColor">#E3A71C</Color>
+  <Color x:Key="HighlightedProgressBarColor">#F7BB04</Color>
+  <Color x:Key="ProgressIndeterminateColor1">#34343B</Color>
+  <Color x:Key="ProgressIndeterminateColor2">#414149</Color>
+  <Color x:Key="ProgressIndeterminateColor3">#474749</Color>
+  <Color x:Key="ProgressIndeterminateColor4">#34343B</Color>
+  <Color x:Key="ErrorColor">#EA4C25</Color>
+  <Color x:Key="InverseBackgroundColor">#FFFEFF</Color>
+  <Color x:Key="CloseHoverBackgroundColor">#EA4C25</Color>
+  <Color x:Key="CloseHoverForegroundColor">#000000</Color>
+  <Color x:Key="IconButtonHoverColor">#0DFFFFFF</Color>
+  <SolidColorBrush x:Key="NotificationBackgroundBrush" options:Freeze="true"
+                   Color="{StaticResource NotificationBackgroundColor}"/>
+  <SolidColorBrush x:Key="NotificationOuterBorderBrush" options:Freeze="true"
+                   Color="{StaticResource NotificationOuterBorderColor}"/>
+  <SolidColorBrush x:Key="NotificationBorderBrush" options:Freeze="true"
+                   Color="{StaticResource NotificationBorderColor}"/>
+  <SolidColorBrush x:Key="InactiveWindowCaptionBrush" options:Freeze="true"
+                   Color="{StaticResource InactiveWindowCaptionColor}"/>
+  <SolidColorBrush x:Key="OverlayBorderBrush" options:Freeze="true" Color="{StaticResource OverlayBorderColor}"/>
+  <SolidColorBrush x:Key="OverlayBrush" options:Freeze="true" Color="{StaticResource OverlayColor}"/>
+  <SolidColorBrush x:Key="WindowCaptionBrush" options:Freeze="true" Color="{StaticResource WindowCaptionColor}"/>
+  <SolidColorBrush x:Key="IconButtonHoverBrush" options:Freeze="true" Color="{StaticResource IconButtonHoverColor}"/>
+  <SolidColorBrush x:Key="CloseHoverForegroundBrush" options:Freeze="true"
+                   Color="{StaticResource CloseHoverForegroundColor}"/>
+  <SolidColorBrush x:Key="CloseHoverBackgroundBrush" options:Freeze="true"
+                   Color="{StaticResource CloseHoverBackgroundColor}"/>
+  <SolidColorBrush x:Key="LinkDefaultBrush" options:Freeze="true" Color="{StaticResource LinkDefaultColor}"/>
+  <SolidColorBrush x:Key="InverseTextBrush" options:Freeze="true" Color="{StaticResource InverseTextColor}"/>
+  <SolidColorBrush x:Key="InverseBackgroundBrush" options:Freeze="true"
+                   Color="{StaticResource InverseBackgroundColor}"/>
+  <SolidColorBrush x:Key="ErrorBrush" options:Freeze="true" Color="{StaticResource ErrorColor}"/>
+  <SolidColorBrush x:Key="ProgressIndeterminateBrush1" options:Freeze="true"
+                   Color="{StaticResource ProgressIndeterminateColor1}"/>
+  <SolidColorBrush x:Key="ProgressIndeterminateBrush2" options:Freeze="true"
+                   Color="{StaticResource ProgressIndeterminateColor2}"/>
+  <SolidColorBrush x:Key="ProgressIndeterminateBrush3" options:Freeze="true"
+                   Color="{StaticResource ProgressIndeterminateColor3}"/>
+  <SolidColorBrush x:Key="ProgressIndeterminateBrush4" options:Freeze="true"
+                   Color="{StaticResource ProgressIndeterminateColor4}"/>
+  <SolidColorBrush x:Key="ProgressBarBrush" options:Freeze="true" Color="{StaticResource ProgressBarColor}"/>
+  <SolidColorBrush x:Key="FocusBorderBrush" options:Freeze="true" Color="{StaticResource FocusBorderColor}"/>
+  <SolidColorBrush x:Key="FocusBrush" options:Freeze="true" Color="{StaticResource FocusColor}"/>
+  <SolidColorBrush x:Key="ButtonDisableBrush" options:Freeze="true" Color="{StaticResource ButtonDisableColor}"/>
+  <SolidColorBrush x:Key="ButtonPressedBrush" options:Freeze="true" Color="{StaticResource ButtonPressedColor}"/>
+  <SolidColorBrush x:Key="ButtonBorderBrush" options:Freeze="true" Color="{StaticResource ButtonBorderColor}"/>
+  <SolidColorBrush x:Key="ButtonHoverBrush" options:Freeze="true" Color="{StaticResource ButtonHoverColor}"/>
+  <SolidColorBrush x:Key="AccentForegroundBrush" options:Freeze="true" Color="{StaticResource AccentForegroundColor}"/>
+  <SolidColorBrush x:Key="AccentBackgroundBrush" options:Freeze="true" Color="{StaticResource AccentBackgroundColor}"/>
+  <SolidColorBrush x:Key="BackgroundBrush" options:Freeze="true" Color="{StaticResource BackgroundColor}"/>
+  <SolidColorBrush x:Key="ControlDefaultBrush" options:Freeze="true" Color="{StaticResource ControlDefaultColor}"/>
+  <SolidColorBrush x:Key="ControlHoverBrush" options:Freeze="true" Color="{StaticResource ControlHoverColor}"/>
+  <SolidColorBrush x:Key="ControlActiveBrush" options:Freeze="true" Color="{StaticResource ControlActiveColor}"/>
+  <SolidColorBrush x:Key="ControlDisabledBrush" options:Freeze="true" Color="{StaticResource ControlDisabledColor}"/>
+  <SolidColorBrush x:Key="BackgroundActiveBrush" options:Freeze="true" Color="{StaticResource BackgroundActiveColor}"/>
+  <SolidColorBrush x:Key="TextBrush" options:Freeze="true" Color="{StaticResource TextColor}"/>
+  <SolidColorBrush x:Key="TextActiveBrush" options:Freeze="true" Color="{StaticResource TextActiveColor}"/>
+  <SolidColorBrush x:Key="TabHoverBrush" options:Freeze="true" Color="{StaticResource TabHoverColor}"/>
+</ResourceDictionary>

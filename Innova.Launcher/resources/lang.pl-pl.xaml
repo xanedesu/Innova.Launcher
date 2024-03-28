@@ -1,0 +1,24 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+  <String x:Key="Dialog.ApplicationUrlOpen">Otworzyć aplikację</String>
+  <String x:Key="Dialog.Cancel">Odwołanie</String>
+  <String x:Key="Dialog.No">Nie</String>
+  <String x:Key="Dialog.Ok">Ok</String>
+  <String x:Key="Dialog.Yes">Tak</String>
+  <String x:Key="Error.NoInternet">
+    Brak połączenia z Internetem
+  </String>
+  <String x:Key="Error.PageLoadFail">
+    Strona się nie załadowała
+  </String>
+  <String x:Key="Error.PageLoadFailRetry">Odświeżyć stronę</String>
+  <String x:Key="Error.PageLoadFailTry">
+    Spróbuj odświeżyć stronę
+  </String>
+  <String x:Key="GamesEnvironmentSwitch.Message">Wybierz otoczenie:</String>
+  <String x:Key="GamesEnvironmentSwitch.Title">
+    Zmiana otoczenia gry
+  </String>
+  <String x:Key="SystemTray.Exit">Wyjść</String>
+</ResourceDictionary>

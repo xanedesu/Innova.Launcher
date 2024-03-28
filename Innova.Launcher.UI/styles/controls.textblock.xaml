@@ -1,0 +1,27 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Style x:Key="InnovaTextBlock" TargetType="{x:Type TextBlock}">
+    <Setter Property="TextBlock.FontWeight" Value="Medium"/>
+    <Setter Property="TextBlock.LineStackingStrategy" Value="BlockLineHeight"/>
+  </Style>
+  <Style x:Key="H1" BasedOn="{StaticResource InnovaTextBlock}" TargetType="{x:Type TextBlock}">
+    <Setter Property="TextBlock.FontSize" Value="35px"/>
+    <Setter Property="TextBlock.LineHeight" Value="35px"/>
+  </Style>
+  <Style x:Key="H2" BasedOn="{StaticResource InnovaTextBlock}" TargetType="{x:Type TextBlock}">
+    <Setter Property="TextBlock.FontSize" Value="20px"/>
+  </Style>
+  <Style x:Key="H3" BasedOn="{StaticResource InnovaTextBlock}" TargetType="{x:Type TextBlock}">
+    <Setter Property="TextBlock.FontSize" Value="15px"/>
+    <Setter Property="TextBlock.LineHeight" Value="25px"/>
+  </Style>
+  <Style x:Key="H4" BasedOn="{StaticResource InnovaTextBlock}" TargetType="{x:Type TextBlock}">
+    <Setter Property="TextBlock.FontSize" Value="13px"/>
+    <Setter Property="TextBlock.LineHeight" Value="20px"/>
+    <Setter Property="FrameworkElement.Margin" Value="0 -4 0 0"/>
+  </Style>
+  <Style x:Key="H5" BasedOn="{StaticResource InnovaTextBlock}" TargetType="{x:Type TextBlock}">
+    <Setter Property="TextBlock.FontSize" Value="11px"/>
+    <Setter Property="TextBlock.LineHeight" Value="15px"/>
+  </Style>
+</ResourceDictionary>

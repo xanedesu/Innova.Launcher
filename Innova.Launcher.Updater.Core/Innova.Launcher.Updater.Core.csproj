@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Program Files (x86)\Innova\4game2.0\bin\Innova.Launcher.Updater.Core.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{29EBFCB1-19CA-49B2-A163-E1C71BA5F29A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Innova.Launcher.Updater.Core</AssemblyName>
+    <ApplicationVersion>1.0.0.279</ApplicationVersion>
+    <RootNamespace>Innova.Launcher.Updater.Core</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Innova.Launcher.Shared">
+      <HintPath>lib\Innova.Launcher.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Innova.Launcher.Shared.Logging">
+      <HintPath>lib\Innova.Launcher.Shared.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Polly">
+      <HintPath>lib\Polly.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism">
+      <HintPath>lib\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections">
+      <HintPath>lib\System.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Concurrent" />
+    <Reference Include="System.Diagnostics.Debug">
+      <HintPath>lib\System.Diagnostics.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Process">
+      <HintPath>lib\System.Diagnostics.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem">
+      <HintPath>lib\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq">
+      <HintPath>lib\System.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive">
+      <HintPath>lib\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>lib\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions">
+      <HintPath>lib\System.Runtime.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices">
+      <HintPath>lib\System.Runtime.InteropServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages">
+      <HintPath>lib\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading">
+      <HintPath>lib\System.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>lib\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LauncherUpdaterCoreModule.cs" />
+    <Compile Include="Services\ForgameUpdater.cs" />
+    <Compile Include="Services\ForgameUpdaterProgressHandler.cs" />
+    <Compile Include="Services\GameInstallerByBinaryUpdater.cs" />
+    <Compile Include="Services\LauncherBinaryUpdater.cs" />
+    <Compile Include="Services\ProcessResult.cs" />
+    <Compile Include="Services\IProcessManager.cs" />
+    <Compile Include="Services\ProcessManager.cs" />
+    <Compile Include="Services\UpdateModel.cs" />
+    <Compile Include="Services\Interfaces\IBinaryUpdater.cs" />
+    <Compile Include="Services\Interfaces\1IBinaryUpdater.cs" />
+    <Compile Include="Services\Interfaces\2IBinaryUpdater.cs" />
+    <Compile Include="Services\Interfaces\IExternalGameInstaller.cs" />
+    <Compile Include="Services\Interfaces\1IExternalGameInstaller.cs" />
+    <Compile Include="Services\Interfaces\2IExternalGameInstaller.cs" />
+    <Compile Include="Services\Interfaces\IForgameUpdaterProgressHandler.cs" />
+    <Compile Include="Models\UpdateProgressInfo.cs" />
+    <Compile Include="Infrastructure\ForgameUpdaterExecutable.cs" />
+    <Compile Include="Helpers\IpcConnectionHelper.cs" />
+    <Compile Include="Helpers\ZipHelper.cs" />
+    <Compile Include="Exceptions\ForgameUpdaterExtractionException.cs" />
+    <Compile Include="Exceptions\ForgameUpdaterStartException.cs" />
+    <Compile Include="Services\Interfaces\3IBinaryUpdater.cs" />
+    <Compile Include="Services\Interfaces\3IExternalGameInstaller.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ForgameUpdater\ForgameUpdater.zip" />
+    <EmbeddedResource Include="ForgameUpdater\PAUpdater.zip" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

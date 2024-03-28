@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Program Files (x86)\Innova\4game2.0\bin\Innova.Launcher.Shared.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E1B7CA0A-CA73-4102-A76D-67DEF48FD62F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Innova.Launcher.Shared</AssemblyName>
+    <ApplicationVersion>1.0.0.279</ApplicationVersion>
+    <RootNamespace>Innova.Launcher</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Innova.Launcher.Shared.Logging">
+      <HintPath>lib\Innova.Launcher.Shared.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Innova.Launcher.Shared.Tracking">
+      <HintPath>lib\Innova.Launcher.Shared.Tracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry">
+      <HintPath>lib\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Polly">
+      <HintPath>lib\Polly.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism">
+      <HintPath>lib\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections">
+      <HintPath>lib\System.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Concurrent" />
+    <Reference Include="System.Diagnostics.Debug">
+      <HintPath>lib\System.Diagnostics.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.FileVersionInfo">
+      <HintPath>lib\System.Diagnostics.FileVersionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Process">
+      <HintPath>lib\System.Diagnostics.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem">
+      <HintPath>lib\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.DriveInfo">
+      <HintPath>lib\System.IO.FileSystem.DriveInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipes">
+      <HintPath>lib\System.IO.Pipes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq">
+      <HintPath>lib\System.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Parallel" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Primitives">
+      <HintPath>lib\System.Net.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Requests">
+      <HintPath>lib\System.Net.Requests.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets">
+      <HintPath>lib\System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebClient">
+      <HintPath>lib\System.Net.WebClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebHeaderCollection">
+      <HintPath>lib\System.Net.WebHeaderCollection.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>lib\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions">
+      <HintPath>lib\System.Runtime.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices">
+      <HintPath>lib\System.Runtime.InteropServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions">
+      <HintPath>lib\System.Text.RegularExpressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading">
+      <HintPath>lib\System.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>lib\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Thread">
+      <HintPath>lib\System.Threading.Thread.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.HttpUtility">
+      <HintPath>lib\System.Web.HttpUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.ReaderWriter">
+      <HintPath>lib\System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlSerializer">
+      <HintPath>lib\System.Xml.XmlSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Abstractions">
+      <HintPath>lib\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container">
+      <HintPath>lib\Unity.Container.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LauncherConstants.cs" />
+    <Compile Include="LauncherSharedModule.cs" />
+    <Compile Include="PrismUnityContainer.cs" />
+    <Compile Include="Utils\ConsoleManager.cs" />
+    <Compile Include="Utils\EmbeddedConfigProvider.cs" />
+    <Compile Include="Utils\FileSystemHelper.cs" />
+    <Compile Include="Utils\RegistryHelper.cs" />
+    <Compile Include="Utils\RegistryUninstallInfo.cs" />
+    <Compile Include="Utils\RegisterLauncherSoftwareInfo.cs" />
+    <Compile Include="Utils\RegisterGameSoftwareInfo.cs" />
+    <Compile Include="Utils\DeleteGameSoftwareInfo.cs" />
+    <Compile Include="Utils\UrlSchemeInfo.cs" />
+    <Compile Include="Utils\RegistryConstants.cs" />
+    <Compile Include="Utils\ShortcutHelper.cs" />
+    <Compile Include="Utils\TaskHelper.cs" />
+    <Compile Include="Utils\WebHelper.cs" />
+    <Compile Include="Utils\WinApiUtils.cs" />
+    <Compile Include="Services\ICommandLineArgsProvider.cs" />
+    <Compile Include="Services\CommandLineArgsProvider.cs" />
+    <Compile Include="Services\ComputerNameProvider.cs" />
+    <Compile Include="Services\ExistingLauncherChecker.cs" />
+    <Compile Include="Services\GameActualVersionProvider.cs" />
+    <Compile Include="Services\GameInWindowsRegistrator.cs" />
+    <Compile Include="Services\GamesConfigCdnDataProvider.cs" />
+    <Compile Include="Services\GamesConfigProvider.cs" />
+    <Compile Include="Services\GamesConfigXmlParser.cs" />
+    <Compile Include="Services\HardwareIdProvider.cs" />
+    <Compile Include="Services\HardwareProvider.cs" />
+    <Compile Include="Services\LauncherIdGenerator.cs" />
+    <Compile Include="Services\LauncherIdProvider.cs" />
+    <Compile Include="Services\LauncherInWindowsRegistrator.cs" />
+    <Compile Include="Services\LauncherIpcClient.cs" />
+    <Compile Include="Services\LauncherRegionHelper.cs" />
+    <Compile Include="Services\LauncherStructureProvider.cs" />
+    <Compile Include="Services\LauncherUpdatesRollStrategy.cs" />
+    <Compile Include="Services\LifetimeManager.cs" />
+    <Compile Include="Services\OldForgameGameFinder.cs" />
+    <Compile Include="Services\OperatingSystemProvider.cs" />
+    <Compile Include="Services\IRunningLauncherRepairer.cs" />
+    <Compile Include="Services\RunningLauncherRepairer.cs" />
+    <Compile Include="Services\StartupParametersParser.cs" />
+    <Compile Include="Services\TimeProvider.cs" />
+    <Compile Include="Services\Interfaces\ICdnGamesConfigAddressProvider.cs" />
+    <Compile Include="Services\Interfaces\IComputerNameProvider.cs" />
+    <Compile Include="Services\Interfaces\IExistingLauncherChecker.cs" />
+    <Compile Include="Services\Interfaces\IGameActualVersionProvider.cs" />
+    <Compile Include="Services\Interfaces\IGameInSystemRegistrator.cs" />
+    <Compile Include="Services\Interfaces\1IGameInSystemRegistrator.cs" />
+    <Compile Include="Services\Interfaces\IGamesConfigCdnDataProvider.cs" />
+    <Compile Include="Services\Interfaces\IGamesConfigParser.cs" />
+    <Compile Include="Services\Interfaces\IGamesConfigProvider.cs" />
+    <Compile Include="Services\Interfaces\IHardwareIdProvider.cs" />
+    <Compile Include="Services\Interfaces\IHardwareProvider.cs" />
+    <Compile Include="Services\Interfaces\ILauncherIdGenerator.cs" />
+    <Compile Include="Services\Interfaces\ILauncherIdProvider.cs" />
+    <Compile Include="Services\Interfaces\ILauncherInSystemRegistrator.cs" />
+    <Compile Include="Services\Interfaces\1ILauncherInSystemRegistrator.cs" />
+    <Compile Include="Services\Interfaces\2ILauncherInSystemRegistrator.cs" />
+    <Compile Include="Services\Interfaces\ILauncherStructureProvider.cs" />
+    <Compile Include="Services\Interfaces\ILauncherUpdatesRollStrategy.cs" />
+    <Compile Include="Services\Interfaces\ILifetimeManager.cs" />
+    <Compile Include="Services\Interfaces\IOldForgameGameFinder.cs" />
+    <Compile Include="Services\Interfaces\IOperatingSystemProvider.cs" />
+    <Compile Include="Services\Interfaces\IStartupParametersParser.cs" />
+    <Compile Include="Services\Interfaces\ITimeProvider.cs" />
+    <Compile Include="Services\Exceptions\GamesConfigDataLoadingException.cs" />
+    <Compile Include="Services\Exceptions\GamesConfigNotLoadedException.cs" />
+    <Compile Include="Services\Exceptions\ProcessWaitingTimeoutException.cs" />
+    <Compile Include="Models\InstalledGameInfo.cs" />
+    <Compile Include="Models\GameConfig\GameComponentConfig.cs" />
+    <Compile Include="Models\GameConfig\GameConfig.cs" />
+    <Compile Include="Models\GameConfig\GameLanguage.cs" />
+    <Compile Include="Models\GameConfig\Operation.cs" />
+    <Compile Include="Models\GameConfig\GameComponents.cs" />
+    <Compile Include="Models\GameConfig\GameEventConfigs.cs" />
+    <Compile Include="Models\GameConfig\GameEventConfig.cs" />
+    <Compile Include="Models\GameConfig\GamesConfig.cs" />
+    <Compile Include="Models\GameConfig\GameUninstallerConfig.cs" />
+    <Compile Include="Models\GameConfig\Icons.cs" />
+    <Compile Include="Models\GameConfig\Operations\CopyFolderOperation.cs" />
+    <Compile Include="Models\GameConfig\Operations\ReplaceOperation.cs" />
+    <Compile Include="Infrastructure\IPC\DefaultPipesIpcServerConfigProvider.cs" />
+    <Compile Include="Infrastructure\IPC\PipesIpcClient.cs" />
+    <Compile Include="Infrastructure\IPC\PipesIpcConnection.cs" />
+    <Compile Include="Infrastructure\IPC\PipesIpcServer.cs" />
+    <Compile Include="Infrastructure\IPC\TcpConnection.cs" />
+    <Compile Include="Infrastructure\IPC\TcpMessage.cs" />
+    <Compile Include="Infrastructure\IPC\TcpServer.cs" />
+    <Compile Include="Infrastructure\IPC\Interfaces\IIpcConnection.cs" />
+    <Compile Include="Infrastructure\IPC\Interfaces\IIpcMessage.cs" />
+    <Compile Include="Infrastructure\IPC\Interfaces\IpcServerConnectedEventHander.cs" />
+    <Compile Include="Infrastructure\IPC\Interfaces\IIpcServerConnectedEventArgs.cs" />
+    <Compile Include="Infrastructure\IPC\Interfaces\IIpcServer.cs" />
+    <Compile Include="Infrastructure\IPC\Interfaces\IPipesIpcServerConfigProvider.cs" />
+    <Compile Include="Infrastructure\IPC\Interfaces\ITcpServerConfigProvider.cs" />
+    <Compile Include="Infrastructure\Internet\DefaultInternetConnectionConfigProvider.cs" />
+    <Compile Include="Infrastructure\Internet\HeaderedWebClient.cs" />
+    <Compile Include="Infrastructure\Internet\IInternetConnectionCheckerConfigProvider.cs" />
+    <Compile Include="Infrastructure\Internet\InternetConnectionChecker.cs" />
+    <Compile Include="Infrastructure\Internet\TimeoutWebClient.cs" />
+    <Compile Include="Infrastructure\Internet\Interfaces\IInternetConnectionChecker.cs" />
+    <Compile Include="Infrastructure\Configuration\LauncherStructureConfiguration.cs" />
+    <Compile Include="Infrastructure\Configuration\Interfaces\ILauncherStructureConfigurationProvider.cs" />
+    <Compile Include="Helpers\UrlHelper.cs" />
+    <Compile Include="Extensions\BytesExtensions.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Extensions\LaunchTypeExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Exceptions\BadRegistryPathpart.cs" />
+    <Compile Include="Exceptions\LostTcpClientException.cs" />
+    <Compile Include="Services\Interfaces\2IGameInSystemRegistrator.cs" />
+    <Compile Include="Services\Interfaces\3ILauncherInSystemRegistrator.cs" />
+    <Compile Include="Infrastructure\IPC\Interfaces\1IIpcConnection.cs" />
+    <Compile Include="Infrastructure\IPC\Interfaces\IIpcServer`1.cs" />
+    <Compile Include="Core\Enums\LaunchType.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Shared\Infrastructure\Configuration\structure.conf" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

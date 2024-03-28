@@ -1,0 +1,22 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="pack://application:,,,/Innova.Launcher.UI;component/Styles/Controls.Buttons.xaml"/>
+    <ResourceDictionary Source="pack://application:,,,/Innova.Launcher.UI;component/Styles/Controls.TextBlock.xaml"/>
+    <ResourceDictionary Source="pack://application:,,,/Innova.Launcher.UI;component/Styles/Controls.Scrollbars.xaml"/>
+    <ResourceDictionary Source="pack://application:,,,/Innova.Launcher.UI;component/Styles/Controls.ProgressBar.xaml"/>
+    <ResourceDictionary Source="pack://application:,,,/Innova.Launcher.UI;component/Styles/Controls.ValidationErrorTemplate.xaml"/>
+    <ResourceDictionary Source="pack://application:,,,/Innova.Launcher.UI;component/Styles/Controls.Underline.xaml"/>
+    <ResourceDictionary Source="pack://application:,,,/Innova.Launcher.UI;component/Styles/Controls.ComboBox.xaml"/>
+    <ResourceDictionary Source="pack://application:,,,/Innova.Launcher.UI;component/Styles/Controls.CheckBox.xaml"/>
+    <ResourceDictionary Source="pack://application:,,,/Innova.Launcher.UI;component/Styles/Controls.Hyperlink.xaml"/>
+    <ResourceDictionary Source="pack://application:,,,/Innova.Launcher.UI;component/Styles/Controls.TextBox.xaml"/>
+  </ResourceDictionary.MergedDictionaries>
+  <Style TargetType="{Type Button}" BasedOn="{StaticResource AccentInnovaButtonStyle}"/>
+  <Style TargetType="{Type ScrollBar}" BasedOn="{StaticResource InnovaScrollBar}"/>
+  <Style TargetType="{Type ScrollViewer}" BasedOn="{StaticResource InnovaScrollViewer}"/>
+  <Style TargetType="{Type ProgressBar}" BasedOn="{StaticResource InnovaProgressBar}"/>
+  <Style TargetType="{Type ComboBox}" BasedOn="{StaticResource InnovaComboBox}"/>
+  <Style TargetType="{Type CheckBox}" BasedOn="{StaticResource InnovaCheckBox}"/>
+  <Style TargetType="{Type Hyperlink}" BasedOn="{StaticResource InnovaHyperlink}"/>
+  <Style TargetType="{Type TextBox}" BasedOn="{StaticResource InnovaTextBox}"/>
+</ResourceDictionary>

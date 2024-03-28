@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innova.Launcher.Core", "Innova.Launcher.Core.csproj", "{2FFCA821-025E-47E8-8D45-9E73C5141E5A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FFCA821-025E-47E8-8D45-9E73C5141E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FFCA821-025E-47E8-8D45-9E73C5141E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FFCA821-025E-47E8-8D45-9E73C5141E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FFCA821-025E-47E8-8D45-9E73C5141E5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

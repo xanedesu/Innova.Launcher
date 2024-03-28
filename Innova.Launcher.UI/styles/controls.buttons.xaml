@@ -1,0 +1,273 @@
+<sys:ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:local="clr-namespace:Innova.Launcher.UI"
+                        xmlns:converters="clr-namespace:Innova.Launcher.UI.Converters"
+                        xmlns:sys="clr-namespace:System.Windows;assembly=PresentationFramework">
+  <sys:ResourceDictionary.MergedDictionaries>
+    <sys:ResourceDictionary Source="pack://application:,,,/Innova.Launcher.UI;component/Styles/Icons.xaml"/>
+  </sys:ResourceDictionary.MergedDictionaries>
+  <converters:WindowStateToVisibilityConverter x:Key="MaximizeWindowStateToVisibilityConverter" MaximizeVisibility="Visible"
+                                               RestoreVisibility="Collapsed"/>
+  <converters:WindowStateToVisibilityConverter x:Key="RestoreWindowStateToVisibilityConverter" MaximizeVisibility="Collapsed"
+                                               RestoreVisibility="Visible"/>
+  <sys:CornerRadius x:Key="ButtonCornerRadius">3</sys:CornerRadius>
+  <ControlTemplate x:Key="IconButtonTemplate" TargetType="{x:Type Button}">
+    <Grid x:Name="TemplateRoot" Background="Transparent">
+      <sys:VisualStateManager.VisualStateGroups>
+        <sys:VisualStateGroup x:Name="CommonStates">
+          <sys:VisualStateGroup.Transitions>
+            <sys:VisualTransition GeneratedDuration="0:0:0.1"/>
+          </sys:VisualStateGroup.Transitions>
+          <sys:VisualState x:Name="Normal"/>
+          <sys:VisualState x:Name="MouseOver">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetName="BackgroundRoot" Storyboard.TargetProperty="(UIElement.Opacity)" To="1"
+                               Duration="0"/>
+              <DoubleAnimation Storyboard.TargetName="PART_ContentPresenter" Storyboard.TargetProperty="(UIElement.Opacity)"
+                               To="1" Duration="0"/>
+            </Storyboard>
+          </sys:VisualState>
+          <sys:VisualState x:Name="Pressed">
+            <Storyboard>
+              <DoubleAnimation Storyboard.TargetName="BackgroundRoot" Storyboard.TargetProperty="(UIElement.Opacity)" To="0.8"
+                               Duration="0"/>
+              <DoubleAnimation Storyboard.TargetName="PART_ContentPresenter" Storyboard.TargetProperty="(UIElement.Opacity)"
+                               To="0.8" Duration="0"/>
+            </Storyboard>
+          </sys:VisualState>
+          <sys:VisualState x:Name="Disabled"/>
+        </sys:VisualStateGroup>
+        <sys:VisualStateGroup x:Name="FocusStates">
+          <sys:VisualStateGroup.Transitions>
+            <sys:VisualTransition GeneratedDuration="0:0:0.1"/>
+          </sys:VisualStateGroup.Transitions>
+          <sys:VisualState x:Name="Focused"/>
+          <sys:VisualState x:Name="Unfocused"/>
+          <sys:VisualState x:Name="PointerFocused"/>
+        </sys:VisualStateGroup>
+      </sys:VisualStateManager.VisualStateGroups>
+      <Border x:Name="BackgroundRoot" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Opacity="0"
+              Background="{sys:TemplateBinding Control.Background}"/>
+      <ContentPresenter x:Name="PART_ContentPresenter" Margin="{sys:TemplateBinding Control.Padding}"
+                        TextElement.Foreground="{sys:TemplateBinding Control.Foreground}"
+                        Content="{sys:TemplateBinding ContentControl.Content}"
+                        ContentTemplate="{sys:TemplateBinding ContentControl.ContentTemplate}"
+                        HorizontalAlignment="{sys:TemplateBinding Control.HorizontalContentAlignment}"
+                        VerticalAlignment="{sys:TemplateBinding Control.VerticalContentAlignment}" Opacity="0.5"
+                        RecognizesAccessKey="True"
+                        SnapsToDevicePixels="{sys:TemplateBinding UIElement.SnapsToDevicePixels}"/>
+    </Grid>
+    <ControlTemplate.Triggers>
+      <sys:Trigger Property="UIElement.IsMouseOver" Value="True">
+        <sys:Setter Value="{Binding Path=(local:ButtonAssist.MouseOverBrush), RelativeSource={RelativeSource Self}}"
+                    Property="Control.Foreground"/>
+      </sys:Trigger>
+      <sys:Trigger Property="UIElement.IsEnabled" Value="False">
+        <sys:Setter Value="{sys:DynamicResource ControlDisabledBrush}" Property="Control.Foreground"/>
+      </sys:Trigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <sys:Style x:Key="IconButtonStyle" TargetType="{x:Type Button}">
+    <sys:Setter Property="Control.Background" Value="{sys:DynamicResource IconButtonHoverBrush}"/>
+    <sys:Setter Property="Control.Foreground" Value="{sys:DynamicResource TextBrush}"/>
+    <sys:Setter Property="local:ButtonAssist.MouseOverBrush" Value="{sys:DynamicResource TextActiveBrush}"/>
+    <sys:Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+    <sys:Setter Property="Control.Padding" Value="0"/>
+    <sys:Setter Property="Control.Template" Value="{sys:StaticResource IconButtonTemplate}"/>
+    <sys:Setter Property="Control.VerticalContentAlignment" Value="Center"/>
+  </sys:Style>
+  <sys:Style x:Key="WindowButtonStyle" TargetType="{x:Type Button}"
+             BasedOn="{sys:StaticResource IconButtonStyle}">
+    <sys:Setter Property="sys:FrameworkElement.Width" Value="40"/>
+    <sys:Setter Property="sys:FrameworkElement.Height" Value="30"/>
+    <sys:Setter Property="Control.Padding" Value="10"/>
+    <sys:Setter Property="sys:FrameworkElement.Margin" Value="0"/>
+    <sys:Setter Property="sys:FrameworkElement.VerticalAlignment" Value="Center"/>
+    <sys:Setter Property="Control.IsTabStop" Value="True"/>
+    <sys:Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+  </sys:Style>
+  <sys:Style x:Key="AccentInnovaButtonStyle" TargetType="{x:Type ButtonBase}">
+    <sys:Setter Property="Control.Foreground" Value="{sys:DynamicResource AccentForegroundBrush}"/>
+    <sys:Setter Property="Control.Background" Value="{sys:DynamicResource AccentBackgroundBrush}"/>
+    <sys:Setter Property="Control.BorderBrush" Value="Transparent"/>
+    <sys:Setter Property="Control.BorderThickness" Value="0"/>
+    <sys:Setter Property="sys:FrameworkElement.VerticalAlignment" Value="Center"/>
+    <sys:Setter Property="sys:FrameworkElement.HorizontalAlignment" Value="Center"/>
+    <sys:Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+    <sys:Setter Property="Control.VerticalContentAlignment" Value="Center"/>
+    <sys:Setter Property="Control.FontSize" Value="15px"/>
+    <sys:Setter Property="sys:FrameworkElement.Height" Value="40"/>
+    <sys:Setter Property="UIElement.SnapsToDevicePixels" Value="True"/>
+    <sys:Setter Property="sys:FrameworkElement.FocusVisualStyle" Value="{x:Null}"/>
+    <sys:Setter Property="Control.Template">
+      <sys:Setter.Value>
+        <ControlTemplate TargetType="{x:Type ButtonBase}">
+          <Grid>
+            <Border x:Name="Border" Background="{sys:TemplateBinding Control.Background}"
+                    BorderBrush="{sys:TemplateBinding Control.BorderBrush}"
+                    CornerRadius="{sys:StaticResource ButtonCornerRadius}"
+                    BorderThickness="{sys:TemplateBinding Control.BorderThickness}"
+                    SnapsToDevicePixels="{sys:TemplateBinding UIElement.SnapsToDevicePixels}">
+              <Grid>
+                <Border x:Name="MouseOverRectangle" CornerRadius="{sys:StaticResource ButtonCornerRadius}"
+                        Background="{sys:DynamicResource ButtonHoverBrush}" Opacity="0"/>
+                <Border x:Name="PressedRectangle" CornerRadius="{sys:StaticResource ButtonCornerRadius}"
+                        Background="{sys:DynamicResource ButtonPressedBrush}" Opacity="0"/>
+                <Border x:Name="DisabledRectangle" CornerRadius="{sys:StaticResource ButtonCornerRadius}"
+                        Background="{sys:DynamicResource ButtonDisableBrush}" Opacity="0"/>
+                <ContentControl x:Name="PART_ContentPresenter" IsTabStop="False"
+                                TextBlock.FontSize="{sys:TemplateBinding Control.FontSize}"
+                                Foreground="{sys:TemplateBinding Control.Foreground}"
+                                Margin="{sys:TemplateBinding Control.Padding}"
+                                HorizontalAlignment="{sys:TemplateBinding Control.HorizontalContentAlignment}"
+                                VerticalAlignment="{sys:TemplateBinding Control.VerticalContentAlignment}"
+                                Content="{sys:TemplateBinding ContentControl.Content}"
+                                ContentStringFormat="{sys:TemplateBinding ContentControl.ContentStringFormat}"
+                                ContentTemplate="{sys:TemplateBinding ContentControl.ContentTemplate}"
+                                ContentTemplateSelector="{sys:TemplateBinding ContentControl.ContentTemplateSelector}"
+                                SnapsToDevicePixels="{sys:TemplateBinding UIElement.SnapsToDevicePixels}"/>
+              </Grid>
+            </Border>
+            <sys:VisualStateManager.VisualStateGroups>
+              <sys:VisualStateGroup x:Name="CommonStates">
+                <sys:VisualStateGroup.Transitions>
+                  <sys:VisualTransition GeneratedDuration="0:0:0.2"/>
+                </sys:VisualStateGroup.Transitions>
+                <sys:VisualState x:Name="Normal"/>
+                <sys:VisualState x:Name="MouseOver">
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="MouseOverRectangle" Storyboard.TargetProperty="(UIElement.Opacity)" To="1"
+                                     Duration="0"/>
+                  </Storyboard>
+                </sys:VisualState>
+                <sys:VisualState x:Name="Pressed">
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="PressedRectangle" Storyboard.TargetProperty="(UIElement.Opacity)" To="1"
+                                     Duration="0"/>
+                  </Storyboard>
+                </sys:VisualState>
+                <sys:VisualState x:Name="Disabled">
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="DisabledRectangle" Storyboard.TargetProperty="(UIElement.Opacity)" To="1"
+                                     Duration="0"/>
+                    <DoubleAnimation Storyboard.TargetName="PART_ContentPresenter" Storyboard.TargetProperty="(UIElement.Opacity)"
+                                     To="0.5" Duration="0"/>
+                  </Storyboard>
+                </sys:VisualState>
+              </sys:VisualStateGroup>
+            </sys:VisualStateManager.VisualStateGroups>
+          </Grid>
+        </ControlTemplate>
+      </sys:Setter.Value>
+    </sys:Setter>
+  </sys:Style>
+  <sys:Style x:Key="InnovaButtonStyle" TargetType="{x:Type ButtonBase}">
+    <sys:Setter Property="Control.Background" Value="Transparent"/>
+    <sys:Setter Property="Control.BorderBrush" Value="{sys:DynamicResource TextActiveBrush}"/>
+    <sys:Setter Property="Control.BorderThickness" Value="1"/>
+    <sys:Setter Property="Control.Foreground" Value="{sys:DynamicResource TextActiveBrush}"/>
+    <sys:Setter Property="Control.FontSize" Value="15px"/>
+    <sys:Setter Property="Control.Template">
+      <sys:Setter.Value>
+        <ControlTemplate TargetType="{x:Type ButtonBase}">
+          <Grid x:Name="TemplateRoot">
+            <Border x:Name="Border" Background="{sys:TemplateBinding Control.Background}"
+                    BorderBrush="{sys:TemplateBinding Control.BorderBrush}" CornerRadius="3"
+                    BorderThickness="{sys:TemplateBinding Control.BorderThickness}"
+                    SnapsToDevicePixels="{sys:TemplateBinding UIElement.SnapsToDevicePixels}"/>
+            <Grid>
+              <ContentControl x:Name="PART_ContentPresenter" IsTabStop="False"
+                              Foreground="{sys:TemplateBinding Control.Foreground}"
+                              Margin="{sys:TemplateBinding Control.Padding}"
+                              HorizontalAlignment="{sys:TemplateBinding Control.HorizontalContentAlignment}"
+                              VerticalAlignment="{sys:TemplateBinding Control.VerticalContentAlignment}"
+                              Content="{sys:TemplateBinding ContentControl.Content}"
+                              ContentStringFormat="{sys:TemplateBinding ContentControl.ContentStringFormat}"
+                              ContentTemplate="{sys:TemplateBinding ContentControl.ContentTemplate}"
+                              ContentTemplateSelector="{sys:TemplateBinding ContentControl.ContentTemplateSelector}"
+                              SnapsToDevicePixels="{sys:TemplateBinding UIElement.SnapsToDevicePixels}"/>
+            </Grid>
+            <sys:VisualStateManager.VisualStateGroups>
+              <sys:VisualStateGroup x:Name="CommonStates">
+                <sys:VisualState x:Name="Normal">
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(UIElement.Opacity)" To="0.2"
+                                     Duration="0"/>
+                  </Storyboard>
+                </sys:VisualState>
+                <sys:VisualState x:Name="MouseOver">
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.Opacity)" To="1" Duration="0"/>
+                  </Storyboard>
+                </sys:VisualState>
+                <sys:VisualState x:Name="Pressed">
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="TemplateRoot" Storyboard.TargetProperty="(UIElement.Opacity)" To="0.8"
+                                     Duration="0"/>
+                  </Storyboard>
+                </sys:VisualState>
+              </sys:VisualStateGroup>
+              <sys:VisualStateGroup x:Name="FocusStates">
+                <sys:VisualState x:Name="Focused"/>
+                <sys:VisualState x:Name="Unfocused"/>
+                <sys:VisualState x:Name="PointerFocused"/>
+              </sys:VisualStateGroup>
+            </sys:VisualStateManager.VisualStateGroups>
+          </Grid>
+        </ControlTemplate>
+      </sys:Setter.Value>
+    </sys:Setter>
+  </sys:Style>
+  <sys:DataTemplate x:Key="MinimizeWindowButtonContentTemplate">
+    <Path Data="{sys:StaticResource IconMinimize}" Width="10" Stretch="Uniform"
+          Fill="{Binding Path=Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}}"/>
+  </sys:DataTemplate>
+  <sys:DataTemplate x:Key="MazimizeWindowButtonContentTemplate">
+    <Path Data="{sys:StaticResource IconMaximize}" Width="10" Stretch="Uniform"
+          Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}}"/>
+  </sys:DataTemplate>
+  <sys:DataTemplate x:Key="RestoreWindowButtonContentTemplate">
+    <Path Data="{sys:StaticResource IconRestore}" Width="10" Stretch="Uniform"
+          Fill="{Binding Path=Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}}"/>
+  </sys:DataTemplate>
+  <sys:DataTemplate x:Key="CloseWindowButtonContentTemplate">
+    <Path Data="{sys:StaticResource IconClose}" Width="10" Stretch="Uniform"
+          Fill="{Binding Path=Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}}"/>
+  </sys:DataTemplate>
+  <sys:Style x:Key="MinimizeWindowButtonStyle" TargetType="{x:Type Button}"
+             BasedOn="{sys:StaticResource WindowButtonStyle}">
+    <sys:Setter Property="Control.VerticalContentAlignment" Value="Bottom"/>
+    <sys:Setter Property="ContentControl.ContentTemplate"
+                Value="{sys:StaticResource MinimizeWindowButtonContentTemplate}"/>
+  </sys:Style>
+  <sys:Style x:Key="MaximizeWindowButtonStyle" TargetType="{x:Type Button}"
+             BasedOn="{sys:StaticResource WindowButtonStyle}">
+    <sys:Setter Property="ContentControl.ContentTemplate"
+                Value="{sys:StaticResource MazimizeWindowButtonContentTemplate}"/>
+  </sys:Style>
+  <sys:Style x:Key="MaximizeRestoreWindowButtonStyle" TargetType="{x:Type Button}"
+             BasedOn="{sys:StaticResource WindowButtonStyle}">
+    <sys:Setter Property="ContentControl.ContentTemplate"
+                Value="{sys:StaticResource MazimizeWindowButtonContentTemplate}"/>
+    <sys:Style.Triggers>
+      <sys:DataTrigger Value="{x:Static sys:WindowState.Maximized}"
+                       Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=WindowState}">
+        <sys:Setter Property="ContentControl.ContentTemplate"
+                    Value="{sys:StaticResource RestoreWindowButtonContentTemplate}"/>
+      </sys:DataTrigger>
+    </sys:Style.Triggers>
+  </sys:Style>
+  <sys:Style x:Key="RestoreWindowButtonStyle" TargetType="{x:Type Button}"
+             BasedOn="{sys:StaticResource WindowButtonStyle}">
+    <sys:Setter Property="ContentControl.ContentTemplate"
+                Value="{sys:StaticResource RestoreWindowButtonContentTemplate}"/>
+  </sys:Style>
+  <sys:Style x:Key="CloseWindowButtonStyle" TargetType="{x:Type Button}"
+             BasedOn="{sys:StaticResource WindowButtonStyle}">
+    <sys:Setter Property="Control.Background" Value="{sys:DynamicResource CloseHoverBackgroundBrush}"/>
+    <sys:Setter Property="local:ButtonAssist.MouseOverBrush"
+                Value="{sys:DynamicResource CloseHoverForegroundBrush}"/>
+    <sys:Setter Property="ContentControl.ContentTemplate"
+                Value="{sys:StaticResource CloseWindowButtonContentTemplate}"/>
+  </sys:Style>
+</sys:ResourceDictionary>
